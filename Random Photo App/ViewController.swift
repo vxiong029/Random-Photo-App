@@ -24,6 +24,15 @@ class ViewController: UIViewController {
         button.setTitleColor(.systemPink, for: .normal)
         return button
     }()
+    
+    let colors: [UIColor] = [
+        .systemMint,
+        .systemPink,
+        .yellow,
+        .purple,
+        .systemGreen,
+        .systemOrange
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +55,11 @@ class ViewController: UIViewController {
     
     @objc func didTapButton() {
         getRandomPhoto()
+        getRandomColor()
+    }
+    
+    func getRandomColor() {
+        view.backgroundColor = colors.randomElement()
     }
 
     func getRandomPhoto() {
